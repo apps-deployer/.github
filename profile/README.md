@@ -8,12 +8,12 @@
 
 | Репозиторий | Описание |
 |---|---|
-| [projects-service](../../../projects-service) | Go · gRPC-сервис управления проектами, окружениями и конфигурациями деплоя |
-| [deployments-service](../../../deployments-service) | Python · REST API и Celery-воркеры для сборки образов и деплоя в k8s |
-| [auth-service](../../../auth-service) | Python · GitHub OAuth, выдача JWT |
-| [frontend](../../../frontend) | React/TypeScript · SPA для управления проектами и мониторинга деплоев |
-| [infra](../../../infra) | Terraform · облачная инфраструктура в Yandex Cloud (VPC, k8s, DNS, registry) |
-| [infra-k8s](../../../infra-k8s) | Helmfile · системные компоненты кластера (Traefik, PostgreSQL, Redis) |
+| [projects-service](../../../../projects-service) | Go · gRPC-сервис управления проектами, окружениями и конфигурациями деплоя |
+| [deployments-service](../../../../deployments-service) | Python · REST API и Celery-воркеры для сборки образов и деплоя в k8s |
+| [auth-service](../../../../auth-service) | Python · GitHub OAuth, выдача JWT |
+| [frontend](../../../../frontend) | React/TypeScript · SPA для управления проектами и мониторинга деплоев |
+| [infra](../../../../infra) | Terraform · облачная инфраструктура в Yandex Cloud (VPC, k8s, DNS, registry) |
+| [infra-k8s](../../../../infra-k8s) | Helmfile · системные компоненты кластера (Traefik, PostgreSQL, Redis) |
 
 ## Стек
 
