@@ -8,6 +8,8 @@
 
 | Репозиторий | Описание |
 |---|---|
+| [api-gateway](../../../../api-gateway) | Python · единая REST-точка входа для frontend, auth, projects и deployments |
+| [webhook-service](../../../../webhook-service) | Python · обработчик GitHub App webhooks |
 | [projects-service](../../../../projects-service) | Go · gRPC-сервис управления проектами, окружениями и конфигурациями деплоя |
 | [deployments-service](../../../../deployments-service) | Python · REST API и Celery-воркеры для сборки образов и деплоя в k8s |
 | [auth-service](../../../../auth-service) | Python · GitHub OAuth, выдача JWT |
@@ -26,11 +28,11 @@
 ## Как это работает
 
 ```
-GitHub push → webhook → deployments-service
-                              ↓
-                    gRPC → projects-service (конфиг деплоя, переменные)
-                              ↓
-                    Celery build-worker: git clone → Dockerfile → docker build → push
-                              ↓
-                    Celery deploy-worker: k8s Deployment + Service + Ingress → kubectl apply
+GitHub push → webhook-service → api-gateway
+                                      ↓
+                           projects-service (repo+branch → env)
+                                      ↓
+                           deployments-service → Celery build/deploy workers
+                                      ↓
+                           Kaniko build + Kubernetes Deployment/Service/Ingress
 ```
